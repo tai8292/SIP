@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tableEmployee').DataTable();
+        });
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-inverse" style="background-color: rgba(0, 99, 177, 0.38);">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" style="color:black;" href="dashBoard.html">I-Huney System</a>
+        </div>
+        <ul class="nav navbar-nav" style="margin-left: 50px">
+            <li><a href="#" style="color:black;">Dashboard</a></li>
+            <li style="background-color: #fffc00e6;"><a href="#" style="color:black;">Notification</a></li>
+            <li><a href="#" style="color:black;">User</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" style="color:black;"><span> </span> Admin</a></li>
+            <li><a href="#" style="color:black;"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="row">
+
+</div>
+
+<div class="row" style="margin-top: 30px">
+    <div class="col-sm-3"
+         style="margin-top:2px; margin-left:30px; height:750px; background-color:rgba(255, 255, 255, 0.62); ">
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a href="/notification/hiring">Hiring anniversary</a>
+                    </h4>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a href="/notification/accumulated">Acumulated vacation day</a>
+                    </h4>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a href="/notification/change">Change of payroll</a>
+                    </h4>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a href="/notification/birthday">Birthday in current month</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-sm-8">
+        <div class="panel panel-default" style="background-color:rgba(255, 255, 255, 0.62)">
+            <div class="panel-body">
+                <h2>Change of Payroll</h2>
+                <hr style="height:2px ;border-width:0;background-color:gray">
+
+                <table id="tableEmployee" class="table table-striped table-bordered" style="width:100%">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Phone number</th>
+                        <th>Shareholder</th>
+                        <th>Benefit Plan ID</th>
+                        <th>Benefit Plan Name</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-sm-2">
+
+    </div>
+</div>
+</body>
+</html>

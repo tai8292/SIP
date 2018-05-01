@@ -14,10 +14,10 @@ import java.util.List;
 public interface PersonalRepository extends JpaRepository<Personal, Long> {
 
     @Query("select new Personal(p.id,p.firstName,p.phoneNumber,p.shareholder,p.birthday)" +
-            " from Personal p join p.employment where month(p.birthday) like :date ")
+            " from Personal p join p.employment where Month(p.birthday) like :date ")
     List<Personal> getEmoloyeeBirthday(@Param("date")int d);
 
     @Query("select new Personal(p.id,p.firstName,p.phoneNumber,p.shareholder,em.hireDate) " +
-            " from Personal  p join p.employment em where Date(em.hireDate) like :date")
-    List<Personal> getHiringAniversary(@Param("date")Date date);
+            " from Personal  p join p.employment em where month(em.hireDate) like :mm and day(em.hireDate) like :dd")
+    List<Personal> getHiringAniversary(@Param("mm")int mm,@Param("dd")int dd);
 }

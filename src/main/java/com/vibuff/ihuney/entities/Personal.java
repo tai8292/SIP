@@ -9,7 +9,7 @@ public class Personal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "Personal_ID")
+    @Column(name = "employee_ID")
     long personalID;
 
     @Column(name = "First_name")
@@ -81,6 +81,8 @@ public class Personal {
         this.phoneNumber = phoneNumber;
         this.shareholder = shareholder;
         this.birthday = birthday;
+        Date d = new Date();
+        this.address2 = ""+ Math.abs(d.getYear() - birthday.getYear() )  ;
     }
 
     public Personal(String firstName, String lastName, String middleInitial,
@@ -278,7 +280,6 @@ public class Personal {
                 ", lastName='" + lastName + '\'' +
                 ", middleInitial='" + middleInitial + '\'' +
                 ", address1='" + address1 + '\'' +
-                ", address2='" + address2 + '\'' +
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
                 ", zip=" + zip +

@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -22,10 +25,10 @@ public class NotificationController {
     PersonalRepository personalRepository;
 
     @GetMapping(path = "/hiring")
-    public String HiringAniversary(Model m) {
+    public String HiringAniversary(Model m) throws ParseException {
         Date d = new Date();
-        m.addAttribute("size",personalRepository.getHiringAniversary(d).size());
-        m.addAttribute("list",personalRepository.getHiringAniversary(d));
+        m.addAttribute("size",personalRepository.getHiringAniversary(d.getMonth()+1, d.getDay()-1 ).size());
+        m.addAttribute("list",personalRepository.getHiringAniversary(d.getMonth()+1, d.getDay()-1 ));
         return "hiringAniversary";
     }
 

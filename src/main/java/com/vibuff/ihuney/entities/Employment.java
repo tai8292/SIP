@@ -10,7 +10,7 @@ import java.util.Date;
 public class Employment {
 
     @Id
-    @Column(name = "Personal_ID")
+    @Column(name = "Employee_ID")
     private Long personalID;
 
     @Column(name = "Employment_Status")

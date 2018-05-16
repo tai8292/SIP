@@ -44,6 +44,5 @@ public class UserConfig {
                 @Qualifier("UrEntityManagerFactory") EntityManagerFactory UrEntityManagerFactory) {
             return new JpaTransactionManager(UrEntityManagerFactory);
         }
-
     }
 }

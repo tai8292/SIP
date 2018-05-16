@@ -49,4 +49,41 @@ public class UserController {
             return "redirect:/";
         }
     }
+
+    @GetMapping(path = "/changepass")
+    public String openChangePass(Model model,HttpServletRequest request,@ModelAttribute User user)
+    {
+        if (!request.getSession().isNew() && request.getSession() != null) {
+            model.addAttribute("userP",new User());
+            return "ChangePass";
+        } else {
+            return "redirect:/";
+        }
+
+    }
+
+    @PostMapping(path = "/changesuccess")
+    public String changpass(@ModelAttribute User userP,HttpServletRequest request,Model model)
+    {
+        if (!request.getSession().isNew() && request.getSession() != null) {
+            com.foobar.User.entities.User u = (com.foobar.User.entities.User)request.getSession().getAttribute("user");
+            System.out.println("old pass : "+userP.getPassword());
+            System.out.println("new pass : "+userP.getNewpass());
+            if(userRepository.findByUsernameAndPassword(u.getUsername(),userP.getPassword()).size() == 1)
+            {
+                u.setEmployeeID(userRepository.findByUsernameAndPassword(u.getUsername(),userP.getPassword()).get(0).getEmployeeID());
+                u.setPassword(userP.getNewpass());
+                userRepository.save(u);
+                return "redirect:/dashboard";
+            }
+            else
+            {
+                model.addAttribute("userP",new User());  
+                model.addAttribute("error","Wrong old password");
+                return "ChangePass";
+            }
+        } else {
+            return "redirect:/";
+        }
+    }
 }

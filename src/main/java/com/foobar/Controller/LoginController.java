@@ -34,7 +34,7 @@ public class LoginController {
             request.getSession().setAttribute("user",userRepository.findByUsernameAndPassword(user.getUsername(),user.getPassword()).get(0));
             return "redirect:/dashboard";
         }
-        model.addAttribute("error",true);
+        model.addAttribute("error","Wrong user or password");
         return "login";
     }
 

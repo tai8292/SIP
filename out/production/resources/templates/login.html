@@ -56,7 +56,7 @@
                                 <p class="col-sm-4 control-label pull-left">Password:</p>
                                 <div class="col-sm-8">
                                     <input th:field="*{password}" type="password" class="form-control" placeholder="Mật khẩu"/>
-                                    <p style="color:red" th:if="${error}">Wrong user or password</p>
+                                    <p style="color:red" th:text="${error}"></p>
                                 </div>
                             </div>
 

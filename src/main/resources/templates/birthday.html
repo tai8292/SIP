@@ -24,14 +24,14 @@
             <a class="navbar-brand" style="color:black;" href="dashBoard.html">I-Huney System</a>
         </div>
         <ul class="nav navbar-nav" style="margin-left: 50px">
-            <li><a href="" style="color:black;">Dashboard</a></li>
+            <li><a href="/dashboard" style="color:black;">Dashboard</a></li>
             <li style="background-color: #fffc00e6;"><a href="/notification/hiring"
                                                         style="color:black;">Notification</a></li>
-            <li><a href="/user/" style="color:black;">User</a></li>
+            <li><a href="/user" style="color:black;">User</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" style="color:black;"><span> </span> Admin</a></li>
-            <li><a href="#" style="color:black;"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            <li><a href="#" style="color:black;" th:text="${session.user.username}"><span> </span></a></li>
+            <li><a href="/logout" style="color:black;"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
         </ul>
     </div>
 </nav>

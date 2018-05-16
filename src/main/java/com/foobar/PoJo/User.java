@@ -6,6 +6,7 @@ public class User {
     Boolean manager;
     String username;
     String password;
+    String newpass;
 
     public Integer getEmployeeID() {
         return employeeID;
@@ -37,5 +38,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getNewpass() {
+        return newpass;
+    }
+
+    public void setNewpass(String newpass) {
+        this.newpass = newpass;
     }
 }

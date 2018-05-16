@@ -27,8 +27,8 @@
             <li style="background-color: #fffc00e6;"><a href="/user/" style="color:black;">User</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" style="color:black;"><span> </span> Admin</a></li>
-            <li><a href="#" style="color:black;"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            <li><a href="#" style="color:black;" th:text="${session.user.username}"><span> </span></a></li>
+            <li><a href="/logout" style="color:black;"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
         </ul>
     </div>
 </nav>

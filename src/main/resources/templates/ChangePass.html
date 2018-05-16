@@ -1,0 +1,83 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tableEmployee').DataTable();
+        });
+    </script>
+</head>
+<body style="background-image: url(background.jpg);">
+<nav class="navbar navbar-inverse" style="background-color: rgba(0, 99, 177, 0.38);">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" style="color:black;" href="dashBoard.html">I-Huney System</a>
+        </div>
+        <ul class="nav navbar-nav" style="margin-left: 50px">
+            <li><a href="" style="color:black;">Dashboard</a></li>
+            <li><a href="/notification/hiring" style="color:black;">Notification</a></li>
+            <li><a href="/user/" style="color:black;">User</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" style="color:black;" th:text="${session.user.username}"><span> </span></a></li>
+            <li><a href="/logout" style="color:black;"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="row">
+
+</div>
+
+<div class="row" style="margin-top: 30px">
+    <div class="col-sm-2"
+         style="margin-top:2px; margin-left:30px; height:750px; background-color:rgba(255, 255, 255, 0.62); ">
+    </div>
+
+
+    <div class="col-sm-8">
+        <div class="panel panel-default" style="background-color:rgba(255, 255, 255, 0.62)">
+            <div class="panel-body">
+                <h2>Change password</h2>
+                <hr style="height:2px ;border-width:0;background-color:gray"/>
+                <form th:action="@{/user/changesuccess}" th:object="${userP}" method="post">
+                    <h4 class="col-sm-4">Old password:</h4>
+                            <div>
+                                <input class="form-control" value="" type="password" style="font-size:16px; max-inline-size:320px"
+                                       th:field="*{password}" />
+                                <p style="color:red" th:text="${error}"></p>
+                            </div>
+                            <h4 class="col-sm-4">New password:</h4>
+                            <div>
+                                <input class="form-control" type="password" style="font-size:16px; max-inline-size:320px"
+                                       th:field="*{newpass}" />
+                                <p></p>
+                            </div>
+                            <h4 class="col-sm-4">Confirm password:</h4>
+                            <div>
+                                <input class="form-control" type="password" style="font-size:16px; max-inline-size:320px"/>
+                                <p></p>
+                            </div>
+                            <button type="submit" class="btn btn-md btn-primary" style="margin-left: 300px;">Change pass
+                            </button>
+                            <button type="Reset" class="btn btn-md btn-default" data-dismiss="modal">Reset</button>
+                </form>
+
+                
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-2">
+
+    </div>
+</div>
+</body>
+</html>
